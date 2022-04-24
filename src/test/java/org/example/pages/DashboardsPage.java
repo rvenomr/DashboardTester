@@ -10,7 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 import java.util.Locale;
 import java.util.Set;
 
-public class DashboardsPage extends BasePage{
+public class DashboardsPage extends BasePage {
     private final String dashboardsLoadedXpath = "//div[@role='button']";
 
     @FindBy(how = How.XPATH, using = "//h2[text()=\"Dashboards\"]")
@@ -20,7 +20,7 @@ public class DashboardsPage extends BasePage{
     private WebElement logoutButton;
 
     public DashboardsPage(WebDriver driver) {
-        init(driver,15, dashboardsLoadedXpath);
+        init(driver, 15, dashboardsLoadedXpath);
         PageFactory.initElements(driver, this);
     }
 
@@ -44,15 +44,16 @@ public class DashboardsPage extends BasePage{
         driver.findElement(By.xpath("//button[./span[text()='" + status + "']]")).click();
     }
 
-    public void pushLogoutButton(){
+    public LoginPage pushLogoutButton() {
         logoutButton.click();
+        return new LoginPage(driver);
     }
 
-    public boolean isDashboardGreatingVisible(){
+    public boolean isDashboardGreatingVisible() {
         return dashboards.isDisplayed();
     }
 
-    public boolean isAnyDashboardVisible(){
+    public boolean isAnyDashboardVisible() {
         return driver.findElement(By.xpath(dashboardsLoadedXpath)).isDisplayed();
     }
 }

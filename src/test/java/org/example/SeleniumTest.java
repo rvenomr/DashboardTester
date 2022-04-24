@@ -183,13 +183,8 @@ public class SeleniumTest {
             LoginPage loginPage = new LoginPage(driver);
             DashboardsPage dashboardsPage = loginPage.login(email, password);
             dashboardsPage.pushLogoutButton();
-            Thread.sleep(3000);
-            boolean flag = dashboardsPage.isDashboardGreatingVisible();
-            Assert.assertFalse(flag, "Logout button not working - dashboards greating is visible");
-            flag = dashboardsPage.isAnyDashboardVisible();
-            Assert.assertFalse(flag, "Logout button not working - some of dashboards are still visible");
 
-            flag = loginPage.isLoginGreatingVisible();
+            boolean flag = loginPage.isLoginGreatingVisible();
             Assert.assertTrue(flag, "Logout button not working - dashboards greating is visible");
             flag = loginPage.isEmailFieldVisible();
             Assert.assertTrue(flag, "Email input field is not visible: something with logout");

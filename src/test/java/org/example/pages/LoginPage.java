@@ -28,8 +28,8 @@ public class LoginPage extends BasePage {
     @FindBy(xpath = "//button[./span[text()='FORGOT YOUR PASSWORD?']]")
     private WebElement resetPassword;
 
-    public LoginPage(WebDriver driver){
-        init(driver,10, baseElementPath);
+    public LoginPage(WebDriver driver) {
+        init(driver, 10, baseElementPath);
         PageFactory.initElements(driver, this);
     }
 
@@ -58,7 +58,7 @@ public class LoginPage extends BasePage {
         return loginError.isDisplayed();
     }
 
-    public ResetPasswordPage resetPassword(){
+    public ResetPasswordPage resetPassword() {
         resetPassword.click();
         return new ResetPasswordPage(driver);
     }
@@ -67,15 +67,15 @@ public class LoginPage extends BasePage {
         return loginError.getText();
     }
 
-    public boolean isEmailFieldVisible(){
+    public boolean isEmailFieldVisible() {
         return emailField.isDisplayed();
     }
 
-    public boolean isPasswordFieldVisible(){
+    public boolean isPasswordFieldVisible() {
         return passwordField.isDisplayed();
     }
 
-    public boolean isLoginGreatingVisible(){
+    public boolean isLoginGreatingVisible() {
         return passwordField.isDisplayed();
     }
 }

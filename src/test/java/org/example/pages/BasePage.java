@@ -13,8 +13,8 @@ public abstract class BasePage {
     public WebDriverWait wait;
     public String baseElementPath;
 
-    public void init(WebDriver driver, int durationOfWaitingOfBaseElement, String baseElementPath){
-        this.driver=driver;
+    public void init(WebDriver driver, int durationOfWaitingOfBaseElement, String baseElementPath) {
+        this.driver = driver;
         wait = new WebDriverWait(driver, Duration.ofSeconds(durationOfWaitingOfBaseElement));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(baseElementPath)));
     }

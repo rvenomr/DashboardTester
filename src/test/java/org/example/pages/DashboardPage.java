@@ -7,7 +7,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class DashboardPage extends BasePage{
+public class DashboardPage extends BasePage {
     private String dashboardGreeetingXpath = "//span[contains(text(),'Home')]";
 
     public DashboardPage(WebDriver driver) {
